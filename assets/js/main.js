@@ -98,7 +98,7 @@ jQuery(function($) {
         loop:true,
         margin:0,
         nav:false,
-        dots:false,
+        dots:true,
         items:1
     });
     $('.thumbnail-carousel').owlCarousel({

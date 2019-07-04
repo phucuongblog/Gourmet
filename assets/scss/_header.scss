@@ -14,7 +14,7 @@
 .header-top {
 	@include absolute(0,null,0,null);
 	width: 100%;
-	z-index: 999;
+	z-index: 9999;
 	&--logo {
 		margin: auto;
 		a {
@@ -54,7 +54,7 @@
 					}
 					.sub-menu {
 						background: $black;
-						transition: 0.5s;
+						transition: 0.1s;
 						padding: 20px;
 						min-width: 250px;
 						@include absolute(100%,null,0,null);
@@ -302,13 +302,13 @@
 		}
 	}
 	&--action {
-		ul {
-			li {
+		& > ul {
+			& > li {
 				display: inline-block;
 				padding: 28px 12px;
 				position: relative;
 				&:last-child {
-					padding-right: 0;
+					padding-right: 0!important;
 				}
 				a {
 					display: inline-block;
@@ -374,7 +374,7 @@
 						vertical-align: middle;
 					}
 					ul {
-						@include absolute(120%,null,null,0);
+						@include absolute(100%,null,null,0);
 						min-width: 120px;
 						background: #fff;
 						z-index: 9999;
@@ -382,6 +382,7 @@
 						transition: 0.3s;
 						opacity: 0;
 						visibility: hidden;
+						transform: translateY(20px);
 						li {
 							display: block;
 							padding: 0!important;
@@ -400,7 +401,7 @@
 						&.show {
 							opacity: 1;
 							visibility: visible;
-							top: 100%;
+							transform: translateY(0);
 						}
 					}
 				}
@@ -412,18 +413,17 @@
 		animation-name: slide-down;
 		animation-duration: 1s;
 		background: #fff;
-		border-bottom: 1px solid #e7e7e7;
 		box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
 		@media screen and (min-width: 992px) {
 			.header-top--menu {
 				& > ul {
 					& > li {
 						& > a {
-							padding: 18px 18px 16px 18px;
+							padding: 18px 18px 17px 18px;
 							color: $gray3;
 						}
 						.sub-menu {
-							top: 103%;
+							border-radius: 0 0 2px 2px;
 						}
 					}
 				}
